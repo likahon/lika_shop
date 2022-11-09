@@ -73,7 +73,7 @@ const data = [
         pictureUrl: "https://dlcdnwebimgs.asus.com/gain/D2052B67-2491-4DA1-9E33-97B5326254EA/w717/h525"
       },{
         id: 10,
-        title: "ASUS ROG MAXIMUS Z690 EXTREME GLACIAL",
+        title: "ASUS ROG MAXIMUS Z690 EXTREME",
         price: 397000,
         description: "Socket 1700",
         stock: 20,
@@ -105,7 +105,7 @@ const data = [
         pictureUrl: "https://media.kingston.com/kingston/features/ktc-features-memory-beast-ddr5.jpg"
       },{
         id: 14,
-        title: "Nvidia GeForce RTX 4090 24GB Founders Edition",
+        title: "Nvidia GeForce RTX 4090 24GB FE",
         price: 810000,
         description: "GDDR6",
         stock: 20,
