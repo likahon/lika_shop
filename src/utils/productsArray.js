@@ -1,4 +1,4 @@
-const data = [
+const productList = [
     {
         id: 1,
         title: "AMD Ryzen 9 7950X 5.7GHz",
@@ -109,7 +109,7 @@ const data = [
         price: 810000,
         description: "GDDR6",
         stock: 20,
-        idCategory: 3,
+        idCategory: 4,
         pictureUrl: "https://www.techgames.com.mx/wp-content/uploads/2022/09/GeForce-RTX-4090.jpg"
       },{
         id: 15,
@@ -117,9 +117,9 @@ const data = [
         price: 810000,
         description: "GDDR6",
         stock: 20,
-        idCategory: 3,
+        idCategory: 4,
         pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_692489-MLA48941089177_012022-O.webp"
       }
   ];
 
-  export default data
+  export default productList

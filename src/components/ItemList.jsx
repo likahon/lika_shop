@@ -1,20 +1,30 @@
-const ItemList = (props) => {
-    /* props = {
-        text: ""
-    } */
+import Item from "./Item";
+
+
+const ItemList = ({items, buyItem}) => {
+
     return (
-      <div className="products-container">
-        <div className="product-image">
-          <img src={props.pictureUrl} alt="Product image" />
-        </div>
-        <div className="product-info">
-          <span className="product-title">{props.title}</span>
-          {/* <p>{props.description}</p>
-          <p>Stock: {props.stock}</p> */}
-          <h5>${props.price}</h5>
-        </div>
-          <button className="buyItem-bt" onClick={props.buyItem}>SUMAR AL CARRITO</button>
-    </div>
+      <>
+      {
+        items.length > 0
+        ? items.map(item => (
+            <Item 
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                stock={item.stock}
+                pictureUrl={item.pictureUrl}
+                idCategory={item.idCategory}
+                buyItem={() => buyItem(item.stock)}
+            />
+
+        ))
+
+        : <h1>Cargando productos.</h1>
+      }
+      </>
     )
   }
   
