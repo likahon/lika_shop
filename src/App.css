@@ -85,9 +85,12 @@ body{
 }
 
 .general-container{
+  height: calc(100vh - 64px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow-y: auto;
+  padding-bottom: 30px;
 }
 
 .products-container{
@@ -116,11 +119,13 @@ body{
 
 .product-image img{
   max-height: 200px;
+  padding: 15px;
+  overflow: hidden;
 }
 
 .product-info{
   width: 100%;
-  height: 5.5rem;
+  height: 7.5rem;
   background-color: #3F0071;
   display: flex;
   flex-direction: column;
