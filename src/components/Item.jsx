@@ -11,9 +11,7 @@ const Item = (props) => {
           <img src={props.pictureUrl} alt="Product" />
         </div>
         <div className="product-info">
-          <span className="product-title">{props.title}</span>
-          {/* <p>{props.description}</p>
-          <p>Stock: {props.stock}</p> */}
+          <span className="product-brand">{props.brand}</span>
           <p>Stock: {props.stock}</p> 
           <h5>${props.price}</h5>
         </div>

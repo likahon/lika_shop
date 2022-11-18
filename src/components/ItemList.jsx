@@ -11,7 +11,8 @@ const ItemList = ({items, buyItem}) => {
             <Item 
                 key={item.id}
                 id={item.id}
-                title={item.title}
+                brand={item.brand}
+                model={item.model}
                 description={item.description}
                 price={item.price}
                 stock={item.stock}
