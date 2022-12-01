@@ -14,7 +14,7 @@ const Navbar = () => {
 
           <div className="right_nav">
               <span className="login_nav">Login</span>
-              <CartWidget/>
+              <Link to='/cart'><CartWidget/></Link>
           </div>
       </nav>
     </>

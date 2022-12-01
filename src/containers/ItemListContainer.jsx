@@ -14,7 +14,6 @@ const ItemListContainer = () => {
       let newArray = datos.filter(item => item.stock--)
       setDatos(newArray)
   }
-console.log(datos)
   useEffect(() => {
 
     if (categoryId == undefined) {
