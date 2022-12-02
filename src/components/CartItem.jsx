@@ -4,7 +4,7 @@ import { useCartContext } from "./CartContext";
 
 
 const CartItem = ( {product} ) => {
-const { removeProduct } = useCartContext();
+const { removeItem } = useCartContext();
 
     return (
             <div className="cart_card">
@@ -14,7 +14,7 @@ const { removeProduct } = useCartContext();
                     <p>Cantidad: {product.quantity} </p>
                     <p>Valor por unidad: ${product.price} </p>
                     <p>Subtotal: ${product.quantity * product.price} </p>
-                    <button onClick={() => removeProduct(product.id)}>Eliminar</button>
+                    <button onClick={() => removeItem(product.id)}>Eliminar</button>
                 </div>
             </div>
     )

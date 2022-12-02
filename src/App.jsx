@@ -11,23 +11,25 @@ const App = () => {
   return (
     
     <BrowserRouter>
+     <CartContextProvider>
     <Navbar />
 
     <div className='general-container'>
-    <CartContextProvider>
+   
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/category/:idCategory' element={<ItemListContainer />} />
         <Route path='/item/:idItem' element={<ItemDetailContainer />} />
         <Route path='/Cart' element={<Cart />} />
       </Routes>
-    </CartContextProvider>
-
+    
       </div>
+      </CartContextProvider>
+
     </BrowserRouter>
 
 
   )
 }
 
-export default App;
+export default App;

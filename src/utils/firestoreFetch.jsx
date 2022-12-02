@@ -4,8 +4,8 @@ import { db } from './firebaseConfig';
 
 export const firestoreFetch = async (idCategory) => {
     let q;
-    if (idCategory) {
-        q = query(collection(db, "products"), where('idCategory', '==', idCategory));
+    if (parseInt(idCategory)) {
+        q = query(collection(db, "products"), where('idCategory', '==', Number(idCategory)));
     } else {
         q = query(collection(db, "products"), orderBy('brand'));
     }
@@ -27,8 +27,7 @@ export const firestoreFetchOne = async (idItem) => {
           ...docSnap.data()
       }
     } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
+      console.log("No se encuentra el producto!");
     }
 }
 

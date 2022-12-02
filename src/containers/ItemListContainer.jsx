@@ -7,14 +7,13 @@ import { firestoreFetch } from "../utils/firestoreFetch";
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
-  const { categoryId } = useParams();
+  const { idCategory } = useParams();
 
   useEffect(() => {
-    firestoreFetch(categoryId)
+    firestoreFetch(idCategory)
         .then(result => setDatos(result))
         .catch(err => console.log(err));
-}, [categoryId]);
-    
+}, [idCategory]);
     return (
       <>
       <ItemList items={datos} />

@@ -33,7 +33,7 @@ const Cart = () => {
             return newOrderRef
         }
 
-        /* createOrderInFirestore()
+        createOrderInFirestore()
         .then(response => {
             alert('Order ID = ' + response.id)
 
@@ -47,7 +47,7 @@ const Cart = () => {
             cartData.clear()
         })
             
-        .catch(err => console.log(err)) */
+        .catch(err => console.log(err))
     }
 
     if (cartData.cartList.length === 0) {
@@ -67,7 +67,7 @@ const Cart = () => {
                     Total: {cartData.totalPrice()}
                 </p>
                 {/* <button onClick={handleClick} > Finalizar Compra</button> */}
-                <button  onClick={createOrder()}> Finalizar Compra</button>
+                <button  onClick={createOrder}> Finalizar Compra</button>
 
             </div>
                 )

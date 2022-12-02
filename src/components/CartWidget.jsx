@@ -5,15 +5,14 @@ import { CartContext } from './CartContext';
 
 const CartWidget = () => {
   const cantItemsContext = useContext(CartContext);
-  /* console.log(cantItemsContext.calcItemsQty()); */
 
   return (
     <div className="cart_icon">
         <IoCartOutline />
-        <span>{cantItemsContext}</span>
+        <span>{cantItemsContext.totalProducts() || ""}</span>
 
     </div>
   )
 }
 
-export default CartWidget;
+export default CartWidget;
