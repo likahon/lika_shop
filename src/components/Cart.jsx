@@ -8,7 +8,6 @@ import { db } from '../utils/firebaseConfig';
 
 const Cart = () => {
     const cartData = useCartContext(CartContext);
-    
     const createOrder = () => {
 
         let order = {
@@ -27,7 +26,6 @@ const Cart = () => {
             })),
             total: cartData.totalPrice()
         }
-        console.log(order);
 
         const createOrderInFirestore = async () => {
             const newOrderRef = doc(collection(db, 'orders'));
@@ -35,7 +33,7 @@ const Cart = () => {
             return newOrderRef
         }
 
-        createOrderInFirestore()
+        /* createOrderInFirestore()
         .then(response => {
             alert('Order ID = ' + response.id)
 
@@ -49,7 +47,7 @@ const Cart = () => {
             cartData.clear()
         })
             
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)) */
     }
 
     if (cartData.cartList.length === 0) {

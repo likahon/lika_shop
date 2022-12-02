@@ -20,7 +20,10 @@ const CartContextProvider = ({children}) => {
     const totalPrice = () => {
         return cartList.reduce((prev, act) => prev + act.quantity * act.price, 0);
     }
-
+    const calcItemsQty = () => {
+        let qtys = cartList.map(item => item.quantity);
+        return qtys.reduce(((acumulador, productoActual) => acumulador + productoActual), 0);
+    }
     const totalProducts = () => cartList.reduce ((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
 
     const clear = () => setCartList([]);
@@ -39,7 +42,7 @@ const CartContextProvider = ({children}) => {
             totalPrice,
             totalProducts,
             cartList,
-            
+            calcItemsQty
             }}> 
 
         {children} 
