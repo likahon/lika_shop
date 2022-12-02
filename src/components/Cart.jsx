@@ -66,7 +66,6 @@ const Cart = () => {
                 <p>
                     Total: {cartData.totalPrice()}
                 </p>
-                {/* <button onClick={handleClick} > Finalizar Compra</button> */}
                 <button  onClick={createOrder}> Finalizar Compra</button>
 
             </div>
