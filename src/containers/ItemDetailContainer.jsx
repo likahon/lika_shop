@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../containers/ItemDetail";
-import productsArray from "../utils/productsArray";
-import ProductsPromise from "../utils/ProductsPromise";
+import { firestoreFetchOne } from "../utils/firestoreFetch";
 
 const ItemDetailContainer = () => {
   const [infoProd, setinfoProd] = useState([])
   const{ idItem } = useParams();
-
+  
   useEffect(() => {
-      ProductsPromise(2000, productsArray.find(item => item.id == idItem))
-          .then(response => setinfoProd(response))
-          .catch(err => console.log(err))
-  })
+    firestoreFetchOne(idItem)
+    .then(result => setinfoProd(result))
+    .catch(err => console.log(err))
+  }, [idItem]);
+
+
     
     return (
       <>

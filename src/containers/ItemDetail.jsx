@@ -5,13 +5,13 @@ import ItemCount from "../components/ItemCount";
 
 const ItemDetail = ({ item }) => {
   const [itemCount, setItemCount] = useState(0);
-  const {addProduct} = useCartContext();
+  const {addItem} = useCartContext();
 
 
   const onAdd = (cant) => {
       alert("Vas a sumar " + cant + " items al carrito.");
       setItemCount(cant);
-      addProduct(item,cant);
+      addItem(item,cant);
   }
 
   

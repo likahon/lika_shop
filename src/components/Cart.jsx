@@ -1,32 +1,58 @@
 import React from 'react';
-import {addDoc, collection, getFirestore} from 'firebase/firestore' 
-import {useCartContext}  from './CartContext';
+import {increment, updateDoc, collection, doc, serverTimestamp, setDoc} from 'firebase/firestore' 
+import {CartContext, useCartContext}  from './CartContext';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
+import { db } from '../utils/firebaseConfig';
+
 
 const Cart = () => {
-    const { cartList, totalPrice } = useCartContext();
+    const cartData = useCartContext(CartContext);
+    
+    const createOrder = () => {
 
-    const order = {
-        buyer:{
-            name: 'Joaquin',
-            email: 'joaquinfcabral@gmail.com',
-            cel:'3413664488',
-            addres:'Siempre viva 1234'
-        },
-        items: cartList.map (product => ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
-        total: totalPrice(),
+        let order = {
+            buyer: {
+                name: ' Leo Messi',
+                email: 'q@q.q',
+                phone: '124151512'
+            },
+            date: serverTimestamp(),
+            items: cartData.cartList.map(item =>({
+                id:item.id,
+                price: item.price,
+                brand: item.brand,
+                quantity: item.quantity,
+                model: item.model
+            })),
+            total: cartData.totalPrice()
+        }
+        console.log(order);
+
+        const createOrderInFirestore = async () => {
+            const newOrderRef = doc(collection(db, 'orders'));
+            await setDoc(newOrderRef, order);
+            return newOrderRef
+        }
+
+        createOrderInFirestore()
+        .then(response => {
+            alert('Order ID = ' + response.id)
+
+
+            cartData.cartList.forEach(async(item) => {
+                const itemRef = doc(db, "products", item.id)
+                await updateDoc(itemRef,{
+                    stock: increment(-item.quantity)
+                });
+            })
+            cartData.clear()
+        })
+            
+        .catch(err => console.log(err))
     }
 
-    const handleClick = () => {
-        const db = getFirestore();
-        const ordersCollection = collection(db, 'orders');
-        addDoc (ordersCollection, order)
-        .then(({id}) => console.log(id))
-
-
-    }
-    if (cartList.length === 0) {
+    if (cartData.cartList.length === 0) {
         return (
             <>
                 <p>No hay productos en el carrito</p>
@@ -37,12 +63,13 @@ const Cart = () => {
         return (
             <div className='cart_father'>
                 {
-                    cartList.map(product => <CartItem key={product.id} product={product} /> )
+                    cartData.cartList.map(product => <CartItem key={product.id} product={product} /> )
                 }
                 <p>
-                    Total: {totalPrice()}
+                    Total: {cartData.totalPrice()}
                 </p>
-                <button onClick={handleClick} > Finalizar Compra</button>
+                {/* <button onClick={handleClick} > Finalizar Compra</button> */}
+                <button  onClick={createOrder()}> Finalizar Compra</button>
 
             </div>
                 )

@@ -1,7 +1,7 @@
 import Item from "./Item";
 
 
-const ItemList = ({items, buyItem}) => {
+const ItemList = ({items}) => {
 
     return (
       <>
@@ -18,7 +18,6 @@ const ItemList = ({items, buyItem}) => {
                 stock={item.stock}
                 pictureUrl={item.pictureUrl}
                 idCategory={item.idCategory}
-                buyItem={() => buyItem(item.stock)}
             />
 
         ))
