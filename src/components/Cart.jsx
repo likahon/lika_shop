@@ -53,8 +53,9 @@ const Cart = () => {
     if (cartData.cartList.length === 0) {
         return (
             <div className='no_items'>
-                <p>El carrito está vacío!</p>
-                <Link to={'/'} className='buyItem-bt'>Comenzar a llenar</Link>
+                <img src="https://www.kindpng.com/picc/m/177-1771572_clear-shopping-cart-icon-png-download-laundry-icons.png" alt="empty cart"></img>
+                <p>Tu carrito está vacío!</p>
+                <Link to={'/'} className='buyItem-bt'>Vamos a llenarlo!</Link>
             </div>
         );
     }else{

@@ -8,7 +8,7 @@ const { removeItem } = useCartContext();
 
     return (
             <div className="cart_card">
-                <IoCloseCircleOutline className="delete_icon" src={"public/img/delete_icon.png"} alt="" onClick={() => removeItem(product.id)}/>
+                <IoCloseCircleOutline className="delete_icon" alt="" onClick={() => removeItem(product.id)}/>
                 <img className="img" src={product.pictureUrl} alt="img" />
                 <div className="cart_card_info">
                     <span className="brand_title">{product.brand} {product.model}</span>

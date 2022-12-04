@@ -39,6 +39,10 @@ body{
   font-weight: 900;
 }
 
+.no_items img{
+  height: 200px;
+}
+
 .no_items .buyItem-bt{
   text-decoration: none;
   
