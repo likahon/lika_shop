@@ -60,14 +60,37 @@ const Cart = () => {
     }else{
         return (
             <div className='cart_father'>
-                {
-                    cartData.cartList.map(product => <CartItem key={product.id} product={product} /> )
-                }
-                <p>
-                    Total: {cartData.totalPrice()}
-                </p>
-                <button  onClick={createOrder}> Finalizar Compra</button>
+                <div className='principal_container'>
+                    <div className='titles_cart'>
+                        <span className='prod_title'>PRODUCTO</span>
+                            <div className='rest_title'>
+                                <span>CANTIDAD</span>
+                                <span>PRECIO</span>
+                                <span>SUBTOTAL</span>
+                            </div>
+                        </div>
+                        {
+                            cartData.cartList.map(product => <CartItem key={product.id} product={product} /> )
+                        }
+                </div>
+                <div className='totals_container'>
+                    <div className='del_disc_taxes'>
 
+                        <div className='del_disc_titles'>
+                            <span>Descuento:</span>
+                            <span>Envío:</span>
+                            <span>Total:</span>
+                        </div>
+
+                        <div className='del_disc_values'>
+                            <span>$0</span>
+                            <span>$0</span>
+                            <span> ${cartData.totalPrice()}</span>
+                        </div>
+
+                    </div>
+                    <button  onClick={createOrder}> Finalizar Compra</button>
+                </div>
             </div>
                 )
     }

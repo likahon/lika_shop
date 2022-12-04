@@ -19,10 +19,18 @@ const ItemCount = ({ stock = 0, initial = 1,  onAdd }) => {
         }
     }
     return (
-        <div>
-            <button variant="text" onClick={increment}>+</button>
-            <span>{count}</span>
-            <button variant="text" onClick={decrement}>-</button>
+        <div className='item_count_children'>
+            <div className='qty_items'>
+                <span>Cantidad:</span>
+                <button variant="text" onClick={decrement}>-</button>
+                {
+                    count > 1 || count === 0
+                    ?<span>{count} Unidades</span>
+                    :<span>{count} Unidad</span>
+                }
+                <button variant="text" onClick={increment}>+</button>
+                
+            </div>
             {
                 stock && count
                 ? <button className="buyItem-bt" variant="contained" onClick={() => onAdd(count)}>Sumar al carrito</button>

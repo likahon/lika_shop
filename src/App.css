@@ -5,7 +5,7 @@
 }
 
 body{
-  background-color: rgb(18, 18, 18);
+  background-color: rgb(250, 250, 250);
 }
 
 .header_comm {
@@ -23,7 +23,10 @@ body{
   width: 12.7rem;
   align-items: center;
   justify-content: center;
+  background-color: #FB2576;
 }
+
+
 
 .name_comm {
   display: flex;
@@ -100,10 +103,12 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #150050;
+  _background-color: #150050;
   color: white;
   margin: 20px 0px 0px 20px;
   text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid rgb(179, 179, 179);
 }
 
 .products-container:hover{
@@ -125,7 +130,7 @@ body{
 
 .product-info{
   width: 100%;
-  height: 7.5rem;
+  height: 8.2rem;
   background-color: #3F0071;
   display: flex;
   flex-direction: column;
@@ -136,6 +141,7 @@ body{
 .product-brand{
   font-size: 16px;
   margin-bottom: 10px;
+  font-weight: 900;
 }
 
 .product-info h5{
@@ -158,11 +164,13 @@ body{
   text-decoration: none;
   justify-content: center;
   align-items: center;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .buyItem-bt:hover{
 color: white;
 font-size: 17px;
+cursor: pointer;
 font-weight: 900;
 }
 
@@ -192,7 +200,7 @@ font-weight: 900;
 }
 
 .detail-product-image{
-  width: 33rem;
+  width: 63rem;
   height: 33rem;
   max-width: 600px;
   display: flex;
@@ -261,23 +269,23 @@ font-weight: 900;
   margin-top: 45px;
 }
 .product-detail-price{
-  width: 23rem;
+  width: 8rem;
   text-align: left;
   font-size: 2rem;
   font-weight: 900;
 }
 
 .buy-price-container{
-  width: 23rem;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .buyItem-bt{
   height: 2.3rem;
-  width: 100%;
+  width: 13rem;
   display: flex;
   background-color: #FB2576;
   color: white;
@@ -288,28 +296,212 @@ font-weight: 900;
   border-radius: 2rem;
 }
 
+.qty_items {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.qty_items button{
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  font-size: 25px;
+  border: 0px solid white;
+  margin: 0px 5px 0px 5px;
+}
+
+.item_count_father{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_count_children{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-info h5{
   font-weight: 900;
 }
 
 .cart_card{
-  height: 12rem;
-  width: 100%;
-  background-color: red;
-  color: white;
+  height: 6rem;
+  width: 98.5%;
+  color: black;
   display: flex;
   flex-direction: row;
+  margin: 0rem 0rem 0rem 1rem;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+.cart_card_info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 900;
+}
+
+.cart_card_info span{
+  width: 80%;
+  text-align: center;
+}
+
+.brand_title{
+  width: 31rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+.rest_prod_title{
+  width: 80%;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart_card .img{
+  height: 70%;
+  max-width: 10rem;
+  object-fit: cover;
+  display: flex;
+  align-self: center;
+}
+
+.delete_icon{
+  height: 100%;
+  color: rgb(161, 161, 161);
+  width: 1.5rem;
+  cursor: pointer;
 }
 
 .cart_father{
   height: calc(100vh - 120px);
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: white;
+  justify-content: space-between;
 }
 
+.principal_container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+.titles_cart{
+  width: 99%;
+  color: black;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid rgb(212, 212, 212);
+  margin-left: 10px;
+}
+
+.titles_cart span{
+  width: 100%;
+  text-align: center;
+}
+
+.prod_title{
+  width: 50rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+.rest_title{
+  width: 80%;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totals_container{
+  background-color: #3F0071;
+  height: calc(100vh - 64px);
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px 0px 20px;
+}
+
+.totals_container button{
+  height: 50px;
+  border: 0px;
+  font-size: 18px;
+  font-weight: 900;
+  background-color: #FB2576;
+  color: white;
+  border-radius: 5px;
+}
+
+.del_disc_taxes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.del_disc_titles{
+  display: flex;
+  flex-direction: column;
+  font-weight: 900;
+}
+
+.del_disc_values{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.notifCartItems {
+  position: absolute;
+  background-color: #f02d00;
+  color: white;
+  border-radius: 12px;
+  top: 7px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  font-size: 0.3em;
+  text-align: center;
+}
+
+.spinner_icon{
+  height: 50px;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(179, 179, 179);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 29, 29);
+  border-radius: 20px;
+}
 
 /* MEDIA QUERIES START */
 

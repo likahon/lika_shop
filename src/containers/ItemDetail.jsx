@@ -14,7 +14,6 @@ const ItemDetail = ({ item }) => {
       addItem(item,cant);
   }
 
-  
     return (
       <div className="detail-product">
           <div className="principal-container">
@@ -35,7 +34,7 @@ const ItemDetail = ({ item }) => {
               }
               <div className="buy-price-container">
                 <h5 className="product-detail-price">${item.price}</h5>
-                <div>
+                <div className='item_count_father'>
                   {
                     itemCount === 0
                   ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />

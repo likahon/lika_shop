@@ -6,13 +6,20 @@ import { CartContext } from './CartContext';
 const CartWidget = () => {
   const cantItemsContext = useContext(CartContext);
 
-  return (
-    <div className="cart_icon">
-        <IoCartOutline />
-        <span>{cantItemsContext.totalProducts() || ""}</span>
-
-    </div>
-  )
+  if (cantItemsContext.totalProducts() == 0) {
+    return (
+      <div className="cart_icon">
+          <IoCartOutline />
+      </div>
+    )
+  }else{
+    return (
+      <div className="cart_icon">
+          <IoCartOutline />
+          <span className='notifCartItems'>{cantItemsContext.totalProducts() || ""}</span>
+      </div>
+    )
+  }
 }
 
 export default CartWidget;

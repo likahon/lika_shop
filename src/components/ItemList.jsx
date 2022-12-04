@@ -22,7 +22,7 @@ const ItemList = ({items}) => {
 
         ))
 
-        : <h1>Cargando productos.</h1>
+        : <img className="spinner_icon" src="https://i.gifer.com/ZKZg.gif" alt="spinner" />
       }
       </>
     )
