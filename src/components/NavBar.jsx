@@ -13,7 +13,6 @@ const Navbar = () => {
         <Categories />
 
           <div className="right_nav">
-              <span className="login_nav">Login</span>
               <Link to='/cart'><CartWidget/></Link>
           </div>
       </nav>

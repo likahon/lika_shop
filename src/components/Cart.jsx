@@ -52,10 +52,10 @@ const Cart = () => {
 
     if (cartData.cartList.length === 0) {
         return (
-            <>
-                <p>No hay productos en el carrito</p>
-                <Link to={'/'}> Comenzar a comprar</Link>
-            </>
+            <div className='no_items'>
+                <p>El carrito está vacío!</p>
+                <Link to={'/'} className='buyItem-bt'>Comenzar a llenar</Link>
+            </div>
         );
     }else{
         return (
